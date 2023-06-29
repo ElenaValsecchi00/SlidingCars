@@ -13,7 +13,7 @@ public class EnemySpawner : MonoBehaviour
     public RepeatBackGround rb2;
     public RepeatBackGround rb3;
     private int recentSpawns;
-    private float lastSpawn;
+    public float lastSpawn;
 
     // Start is called before the first frame update
     void Start()
@@ -37,7 +37,7 @@ public class EnemySpawner : MonoBehaviour
         float x = num == 0 ? -0.05f : num == 1 ? -0.9f : 0.85f;
         if (x == lastSpawn && recentSpawns==2)
         {
-            x = (x == -0.05f) ? -0.9f : (x == 1f) ? 0.89f : -0.05f;
+            x = (x == -0.05f) ? -0.9f : (x == 1f) ? 0.85f : -0.05f;
             recentSpawns = 0;
         }
         else

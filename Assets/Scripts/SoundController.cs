@@ -7,12 +7,14 @@ public class SoundController : MonoBehaviour
     //Variables
     private AudioClip point;
     private AudioClip death;
+    private AudioClip pedestrian;
     private AudioSource adSrc;
     // Start is called before the first frame update
     void Start()
     {
         point = Resources.Load<AudioClip>("Sounds/PointSound");
         death = Resources.Load<AudioClip>("Sounds/DeathSound");
+        pedestrian = Resources.Load<AudioClip>("Sounds/PedestrianSquash");
         adSrc = GetComponent<AudioSource>();
     }
 
@@ -31,12 +33,15 @@ public class SoundController : MonoBehaviour
         currentMusic.Stop();
         newMusic.Play();
     }
+
     //Play Clip
     public void PlayClip(string clip)
     {
         switch(clip)
         {
             case "point": adSrc.PlayOneShot(point);
+                break;
+            case "pedestrian": adSrc.PlayOneShot(pedestrian);
                 break;
             case "death": adSrc.Stop(); adSrc.PlayOneShot(death);
                 break;

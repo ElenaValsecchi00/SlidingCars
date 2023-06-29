@@ -27,9 +27,9 @@ public class GameController : MonoBehaviour
         Debug.Log("Quit");
     }
     //Increase the Score
-    public void IncreaseScore()
+    public void IncreaseScore(int additionalScore)
     {
-        score += 1;
+        score += additionalScore;
         scoreText.SetText(score.ToString());
         if (score > highScore)
         {

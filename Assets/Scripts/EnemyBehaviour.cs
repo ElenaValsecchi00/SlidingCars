@@ -44,7 +44,7 @@ public class EnemyBehaviour : MonoBehaviour
         if(transform.position.y<player.tr.position.y-0.5)
         {
             adSrc.PlayClip("point");
-            gameC.IncreaseScore();
+            gameC.IncreaseScore(1);
             Destroy(gameObject);
         }
 
